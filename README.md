@@ -1,16 +1,52 @@
-## Hi there 👋
+# Unity 编辑器 AI 开发辅助工具
 
-<!--
-**StriverOne/StriverOne** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+这是一个面向 Unity 客户端开发流程的编辑器工具原型。  
+该工具用于根据自然语言需求生成 Unity C# 面板脚本雏形，支持本地模板生成、多AI 优化、单文件/多文件解析，以及将生成结果直接保存为 Unity 工程内的 `.cs` 文件。
 
-Here are some ideas to get you started:
+---
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## 项目背景
+
+在 Unity 客户端开发过程中，很多 UI 面板、基础脚本和重复性代码的编写存在较高的机械劳动成本。  
+本项目尝试通过“本地模板 + 大模型生成”的方式，构建一个可直接运行在 Unity Editor 中的开发辅助工具，用于提升脚本雏形生成效率，减少重复性编写工作。
+
+本项目的定位不是完整的 AI Agent 平台，而是一个简单的Unity 编辑器内的 AI辅助生成脚本的工具窗口。
+
+---
+
+## 当前已实现功能
+
+### 1. Unity 编辑器窗口工具
+- 基于 `EditorWindow` 构建自定义工具窗口
+- 使用 IMGUI 编写工具界面
+- 支持在 Unity 菜单中直接打开工具
+
+### 2. 本地模板生成
+- 根据自然语言需求进行简单关键词识别
+- 当前支持：
+  - 背包面板 `BagPanel`
+  - 商店面板 `ShopPanel`
+  - 任务面板 `TaskPanel`
+  - 默认通用模板 `DemoPanel`
+- 在未接入 AI 时，也可生成基础脚本雏形
+
+### 3. DeepSeek AI 优化
+- 通过 DeepSeek Chat Completions 接口发送请求
+- 将“用户需求 + 本地模板 + 生成规则”拼接成 prompt
+- 返回优化后的 Unity C# 代码结果
+- 支持连接测试与错误提示
+- 注：工具提供了自定义API配置，用户可根据API KEY、MODEL、KEY来调用自己喜欢的AI产品。并且工具支持直接调用AI，即描述代码需求，之后直接调用AI即可。
+
+### 4. 单文件 / 多文件解析
+- 支持 AI 按统一格式返回代码文件块
+- 当前采用的文件块格式为：
+
+```text
+===FILE: ShopPanel.cs===
+...代码...
+
+===FILE: ShopGoodsItem.cs===
+...代码...
+
+### 5. 单文件 / 多文件生成
+- 当AI按统一格式返回代码文件块后，工具能够自动识别返回的内容，并将返回的内容分成对应的脚本文件，用户也可根据自身需求选择保存其中一个文件还是所有文件。
