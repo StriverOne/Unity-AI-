@@ -1,0 +1,93 @@
+# =========================
+# Unity generated folders
+# =========================
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+UserSettings/
+
+# =========================
+# Unity auto-generated files
+# =========================
+ExportedObj/
+.consulo/
+.idea/
+.vscode/
+.gradle/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# =========================
+# Crash / log / temp files
+# =========================
+*.log
+*.stacktrace
+*.pid
+*.bak
+*.orig
+
+# =========================
+# Package cache (keep Packages/manifest.json and packages-lock.json)
+# =========================
+/Packages/com.unity.testtools.codecoverage/
+/Packages/com.unity.collab-proxy/
+/Packages/com.unity.ide.rider/
+/Packages/com.unity.ide.visualstudio/
+/Packages/com.unity.ide.vscode/
+
+# =========================
+# Build artifacts
+# =========================
+*.apk
+*.aab
+*.unitypackage
+*.app
+*.exe
+*.ipa
+
+# =========================
+# Sensitive / local config
+# =========================
+.env
+.env.*
+*.secret
+*.key
+*.pem
+
+# 如果你后面单独做了本地配置文件，也不要上传
+# 例如：
+# Assets/Editor/AIDevAssistant/LocalConfig.asset
+
+# =========================
+# Keep core project files
+# =========================
+!Assets/
+!Packages/
+!ProjectSettings/
+
+# 保留你真正的源码、README、文档截图等
+!README.md
+!Docs/
