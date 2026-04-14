@@ -46,9 +46,9 @@
 - 工具提供自定义 API 配置，用户可根据自己的 API URL、Model、API Key 接入对应模型服务
 - 支持直接根据自然语言需求调用 AI 生成结果
 
-下面是输入需求后的界面示例：
+下面是输入需求后AI返回界面输出示例：
 
-![输入需求示例](Docs/Images/input-example.png)
+![输出示例](Docs/Images/project-output.png)
 
 ### 4. 单文件 / 多文件解析
 - 支持 AI 按统一格式返回代码文件块
